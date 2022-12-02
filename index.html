@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>interview</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .exam {
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #575179;
+            padding: 0 15px;
+        }
+
+        h1 {
+            margin: 25px 0 0 0;
+            color: greenyellow;
+        }
+
+        h2 {
+            margin: 20px 0;
+            opacity: 0.5;
+        }
+
+        h3 {
+            margin: 20px 0 20px 0;
+            color: #ff9b9b;
+        }
+
+        input {
+            padding: 2px 11px;
+            border-radius: 7px;
+            font-size: 18px;
+            background: #b5aeae;
+            font-weight: bold;
+            letter-spacing: 1px;
+            border: unset;
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        button {
+            padding: 2px 11px;
+            border-radius: 7px;
+            font-size: 15px;
+
+        }
+
+        textarea {
+            padding: 10px;
+            font-size: 15px;
+            background: black;
+            box-shadow: inset 10px 10px 10px #04255b, inset -10px -10px 10px #04255b;
+            color: grey;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .parentTxt {
+            display: none;
+        }
+
+        .parentSubmit {
+            width: 80%;
+        }
+
+        .popupSubmit {
+            padding: 15px;
+            border-radius: 8px;
+            background: aquamarine;
+            position: relative;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: 2s linear;
+            z-index: 50;
+        }
+
+        .close {
+            position: absolute;
+            top: 0;
+            right: 9px;
+        }
+        li{
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="exam">
+        <h1>INTERVIEW</h1>
+        <!-- <h2>please enter your name and first word will capitalize</h2> -->
+        <h2>please enter the student name</h2>
+        <ul class="list">
+            <li>Asif</li>
+            <li>Ismail</li>
+            <li>Owes</li>
+        </ul>
+        <input type="text" name="" id="input" placeholder="first word will capitalize">
+        <button class="btn">Done</button>
+        <h3 id="question"></h3>
+        <div class="parentTxt">
+            <div class="box">
+                <textarea name="" id="typeAnswer" cols="30" rows="10"></textarea>
+                <div class="parentSubmit">
+                    <button class="submitBtn">Submit</button>
+                    <div class="popupSubmit">
+                        <p>your answer has submitted</p>
+                        <p class="close">&#10006</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const button = document.getElementsByClassName("btn")[0];
+        const input = document.getElementById("input");
+        const question = document.getElementById("question");
+        const parentTxt = document.getElementsByClassName("parentTxt")[0];
+        const submitBtn = document.getElementsByClassName("submitBtn")[0];
+        const popupSubmit = document.getElementsByClassName("popupSubmit")[0];
+        const typeAnswer = document.getElementById("typeAnswer");
+        const closebtn = document.getElementsByClassName("close")[0];
+        const list = document.getElementsByClassName("list")[0];
+
+        button.addEventListener("click", function () {
+            if (input.value == "Owes") {
+                question.innerText = "Hii Owes What is (Ui developer) , please explain us";
+                parentTxt.setAttribute("style", "display: block;");
+                list.style.display="none";
+            }
+            else if (input.value == "Ismail") {
+                question.innerText = "Hii Ismail What is (Java script), please explain us";
+                parentTxt.setAttribute("style", "display: block;");
+                list.style.display="none";
+            }
+            else if (input.value == "Asif") {
+                question.innerText = "Hii Asif what is (Bootstrap), please explain us";
+                parentTxt.setAttribute("style", "display: block;");
+                list.style.display="none";
+            }
+            else {
+                question.innerText = "Please type your correct name";
+            }
+
+            
+        })
+
+        submitBtn.addEventListener("click", function () {
+            popupSubmit.setAttribute("style", "opacity: 1; top: 50%;");
+            typeAnswer.value = "";
+        })
+        closebtn.addEventListener("click", function () {
+            parentTxt.style.display = "none";
+            popupSubmit.style.display = "none";
+            question.innerText = "";
+            input.value = "";
+            list.style.display="block";
+            popupSubmit.setAttribute("style", "opacity: 0; top: 0;");
+        })
+    </script>
+</body>
+
+</html>
