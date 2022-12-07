@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Immediately Invoked Function Expression</title>
+    <style>
+        /* p{
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select:none;
+            user-select: none;
+        }
+
+        h1{
+            overflow: scroll;
+            -webkit-overflow-scrolling: touch;
+        } */
+
+        .box {
+            position: relative;
+            max-width: 400px;
+            background: greenyellow;
+            text-align: center;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            background-color: rgb(167, 166, 166);
+            opacity: 0.5;
+            width: 100%;
+            height: 50%;
+        }
+
+        .numbers {
+            height: 500px;
+            overflow: hidden;
+            overflow-y: scroll;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="section">
+
+        <div class="box">
+            <div class="numbers">
+                <p>1234567</p>
+                <p>1234567</p>
+                <p>1234567</p>
+                <p>1234567</p>
+                <p>1234567</p>
+                <p>1234567</p>
+                <p>1234567</p>
+                <p>1234567</p>
+                <p>1234567</p>
+                <p>1234567</p>
+                <p>1234567</p>
+                <p>1234567</p>
+                <p>1234567</p>
+                <p>1234567</p>
+                <p>1234567</p>
+                <p>1234567</p>
+                <p>1234567</p>
+                <p>1234567</p>
+                <p>1234567</p>
+                <p>1234567</p>
+                <p>1234567</p>
+                <p>1234567</p>
+                <p>1234567</p>
+                <p>1234567</p>
+                <p>1234567</p>
+                <p>1234567</p>
+                <p>1234567</p>
+                <p>1234567</p>
+                <p>1234567</p>
+                <p>1234567</p>
+                <p>1234567</p>
+                <p>1234567</p>
+                <p>1234567</p>
+                <p>1234567</p>
+                <p>1234567</p>
+                <p>1234567</p>
+                <p>1234567</p>
+                <p>1234567</p>
+                <p>1234567</p>
+                <p>1234567</p>
+                <p>1234567</p>
+                <p>1234567</p>
+            </div>
+
+            <div class="overlay">
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <script>
+
+        function owes() {
+            console.log("Author name is");
+        }
+        owes();
+
+        (function () {
+            var name = "Owes";
+            var sirName = "Ansari";
+            console.log("IIFE function(created function without name )");
+            console.log(`${name} ${sirName}`);
+        })();
+
+
+    </script>
+</body>
+
+</html>
